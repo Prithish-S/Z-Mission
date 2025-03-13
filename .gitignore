@@ -15,3 +15,22 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# React.js Ignore Rules
+node_modules/
+build/
+dist/
+.env
+.next/
+.parcel-cache/
+.eslintcache
+.vscode/
+.idea/
+
+# PL/SQL Ignore Rules
+*.dmp
+*.log
+*.sql~
+*.bak
+*.backup
+*.out
