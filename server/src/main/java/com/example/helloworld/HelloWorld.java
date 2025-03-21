@@ -1,8 +1,8 @@
 package com.example.helloworld;
 
-public class Rest {
+public class HelloWorld {
 	private String s;
-	public Rest(String s) {
+	public HelloWorld(String s) {
 		this.s=s;
 	}
 	public String getMessage() {
