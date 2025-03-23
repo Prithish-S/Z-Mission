@@ -2,7 +2,7 @@ import { useState,useEffect } from 'react';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import {Helloworld} from './components/Helloworld';
 import './App.css'
-import { Courses } from './pages/courses';
+import { Courses } from './pages/Courses';
 
 function App() {
  
