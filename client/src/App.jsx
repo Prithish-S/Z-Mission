@@ -2,17 +2,20 @@ import { useState,useEffect } from 'react';
 import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
 import {Helloworld} from './components/Helloworld';
 import './App.css'
+import { Courses } from './pages/courses';
 
 function App() {
  
 
   return (
     <>
-     <div>
+     <div >
       <Router>
 
         <Routes>
           <Route path="/helloworld" element={<Helloworld/>}></Route>
+          <Route path="/courses" element={<Courses/>}></Route>
+
         </Routes>
         
       </Router>
