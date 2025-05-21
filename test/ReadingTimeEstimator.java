@@ -4,59 +4,60 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class ReadingTimeEstimator {
-   public static void main(String[] args) 
-   {
+
+    public static final int WORDS_PER_MINUTE = 200;
+
+    public static void main(String[] args) {
         String filePath = args.length > 0 ? args[0] : "input.txt";
-        int wordsPerMinute = 200;
- try 
-   {
-            String content = readFile(filePath).trim();
-            if (content.isEmpty())
-            {
+
+        try 
+        {
+            String content = readFileContent(filePath).trim();
+
+        if (content.isEmpty()) 
+        {
                 System.out.println("The file is empty or contains only whitespace.");
                 return;
-            }
+        }
+
             content = removeImageReferences(content);
             int wordCount = countWords(content);
-            if (wordCount == 0) 
+
+            if (wordCount == 0)
             {
                 System.out.println("No readable text content found after cleaning.");
                 return;
             }
 
-            double readingTimeInMinutes = (double) wordCount / wordsPerMinute;
+            double readingTimeInMinutes = (double) wordCount / WORDS_PER_MINUTE;
             int minutes = (int) readingTimeInMinutes;
             int seconds = (int) ((readingTimeInMinutes - minutes) * 60);
+
             System.out.println("Total words in the course: " + wordCount);
             System.out.println("Estimated Reading Time: " + minutes + " minutes " + seconds + " seconds");
 
-    } 
-    catch (IOException e) 
-    {
-            System.err.println("Error reading file: " + e.getMessage());
-    }
+        } catch (IOException e) {
+            e.printStackTrace(); 
+        }
     }
 
-    private static String readFile(String filePath) throws IOException {
-        StringBuilder contentBuilder = new StringBuilder();
-        try (
-            FileInputStream fis = new FileInputStream(filePath);
-            InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-            BufferedReader reader = new BufferedReader(isr)
-        ) {
+    private static String readFileContent(String filePath) throws IOException {
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                contentBuilder.append(line).append(" ");
+                content.append(line).append(" ");
             }
         }
-        return contentBuilder.toString();
+        return content.toString();
     }
+
     private static int countWords(String text) {
         if (text == null || text.trim().isEmpty()) return 0;
         String[] words = text.trim().split("\\s+");
         return words.length;
     }
-
     private static String removeImageReferences(String text) {
         text = text.replaceAll("(?i)<img[^>]*>", ""); 
         text = text.replaceAll("!\\[[^\\]]*\\]\\([^\\)]*\\)", ""); 
