@@ -20,7 +20,7 @@ public class ReadingTimeEstimator {
             }
 
             int wordCount = countWords(content);
-            String estimatedReadingTimeMessage = calculateReadTime(content);
+            int  estimatedReadingTimeMessage = calculateReadTime(content);
 
             System.out.println("Total words in the course: " + wordCount);
             System.out.println("Estimated Reading Time: " + estimatedReadingTimeMessage);
@@ -55,17 +55,17 @@ public class ReadingTimeEstimator {
         return text;
     }
 
-    public static String calculateReadTime(String content) {
+    public static int calculateReadTime(String content) {
         String cleanedContent = removeImageReferences(content);
         int wordCountForReadingTime = countWords(cleanedContent);
 
         if (wordCountForReadingTime == 0) {
-            return "0 minutes";
+            return 0;
         } else if (wordCountForReadingTime < WORDS_PER_MINUTE) {
-            return "Less than a minute";
+            return 0;
         } else {
-            int minutes = (int) Math.ceil((double) wordCountForReadingTime / WORDS_PER_MINUTE);
-            return minutes + " minutes";
+            int minutes =(int)  Math.ceil( wordCountForReadingTime / WORDS_PER_MINUTE);
+            return minutes ;
         }
     }
 }
