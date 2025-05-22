@@ -1,27 +1,8 @@
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class CourseUtil {
 
+    private CourseUtil() {}
+
     public static final int WORDS_PER_MINUTE = 200;
-    public static final String DEFAULT_FILE_PATH = "input.txt";
-
-   
-
-    public static String readFileContent(String filePath) throws IOException {
-        StringBuilder content = new StringBuilder();
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new FileInputStream(filePath), "UTF-8"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append(" ");
-            }
-        }
-        return content.toString().trim();
-    }
 
     public static int countWords(String text) {
         if (text == null || text.trim().isEmpty()) return 0;
@@ -46,5 +27,4 @@ public class CourseUtil {
             return (int) Math.ceil( wordCountForReadingTime / WORDS_PER_MINUTE);
         }
     }
-     private CourseUtil() {}
 }
