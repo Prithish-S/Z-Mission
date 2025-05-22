@@ -19,7 +19,7 @@ export const Navbar= () =>
     const inputRef=useRef(null);
     // function for handling search term and filtering courses 
     const handleSearch=(e)=>{
-        if(e.key==="Enter" && searchTerm.trim() !== "")
+        if((e.key==="Enter"||e.type==="click") && searchTerm.trim() !== "")
         {
             console.log(searchTerm);
 
@@ -29,8 +29,7 @@ export const Navbar= () =>
             });
 
             setFilteredCourses(filtered);
-            //setSearchTerm("");
-        }
+         }
     }
 
     useEffect(()=>
@@ -38,11 +37,11 @@ export const Navbar= () =>
 
     return ( 
         <>
-        <div className="flex justify-between items-center h-16 inset-0 border-b border-gray-300 px-5">
+        <div className="flex justify-between items-center h-16 inset-0 md:border-b border-t border-gray-300 px-5 active:shadow-lg hover:shadow-lg ">
 
             {/* Menu icon display */}
             {menu ?
-            <RiMenuUnfold3Fill className="text-3xl" onClick={()=>{setMenu(false)}}/>
+            <RiMenuUnfold3Fill className="text-3xl text-customBlue" onClick={()=>{setMenu(false)}}/>
              :
              <RiMenuUnfold4Fill className="text-3xl" onClick={()=>{setMenu(true)}}/>}
 
@@ -50,7 +49,7 @@ export const Navbar= () =>
              {/* search Bar */}
              <div className="relative md:w-2/5 w-3/5 cursor-pointer">
 
-                <IoIosSearch onClick={()=>{inputRef.current.focus();setSearchTerm("")}} className="absolute left-3 text-xl top-1/2 transform -translate-y-1/2"/>
+                <IoIosSearch onClick={()=>{handleSearch({type:"click"});inputRef.current.focus();}} className="absolute left-3 text-xl top-1/2 transform -translate-y-1/2"/>
                 
                 <input 
                 ref={inputRef}

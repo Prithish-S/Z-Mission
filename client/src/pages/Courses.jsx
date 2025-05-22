@@ -1,76 +1,47 @@
 import { Navbar } from "../components/Navbar";
-import { createContext, useState } from "react";
+import { createContext, useState,useEffect } from "react";
+import { CourseCard } from "../components/CourseCard";
+import {useCourses} from "../utils/useCourses";
 
-//Gonna create a context for the courses and navbar component will have access to thins context
+// Gonna create a context for the courses and navbar and coursecard component will have access to this context
+// How this works
+//1.) I have created a context hook here "filteredCourses","setFilteredCourses","courses"
+//2.) this context will be available for coursecard and navbar components
+//3.) navbar will set the filtered courses based on user's search
+//4.) coursecard page will then be able to assess the filtered courses 
+
 export const CourseContext = createContext();
 
 export const Courses = () => {
-  const courses = [
-    {
-      name: "Java Basics",
-      course_id: "C101",
-      duration: "4 Weeks",
-      description: "Intro to Java Intro to Java Intro to JavaIntro to Java",
-      modules: 3, // Number of modules
-    },
-    {
-      name: "Web Dev",
-      course_id: "C102",
-      duration: "6 Weeks",
-      description:
-        "HTML, CSS, JSHTML, CSS, JS HTML, CSS, JS HTML, CSS, JS HTML, CSS, JS",
-      modules: 4,
-    },
-    {
-      name: "Data Structures",
-      course_id: "C103",
-      duration: "8 Weeks",
-      description:
-        "Algorithms and DS Algorithms and DSAlgorithms and DSAlgorithms and DSAlgorithms and DS",
-      modules: 5,
-    },
-    {
-      name: "Machine Learning",
-      course_id: "C104",
-      duration: "12 Weeks",
-      description:
-        "ML & AI ML & AI ML & AI ML & AIML & AIML & AI ML & AI ML & AI",
-      modules: 6,
-    },
-  ];
+  const {available,courses}=useCourses();
   const [filteredCourses, setFilteredCourses] = useState(courses);
-
+  useEffect(()=>{if(available){setFilteredCourses(courses)}},[available,courses]);
+  
   return (
     <CourseContext.Provider
       value={{ filteredCourses, setFilteredCourses, courses }}
     >
-      <Navbar />
-      <div className="pt-[16px] h-screen w-screen flex flex-col items-center">
-        <h1 className="text-2xl">Courses</h1>
-        <div className="mt-16 grid md:grid-cols-3 grid-cols-1 gap-20">
-          {filteredCourses.map((course) => {
-            return (
-              <div className=" h-80 w-80 px-10  border-2 col-span-1 flex flex-col items-center rounded-xl">
-                <h1 className="text-2xl  font-semibold pt-4">{course.name}</h1>
-                <p className="text-justify italic mt-7">{course.description}</p>
-                <div className="flex flex-col mt-44 absolute self-start">
-                  <p>
-                    <span className="font-semibold">Modules: </span>
-                    {course.modules}
-                  </p>
-                  <p>
-                    <span className="font-semibold">Duration: </span>
-                    {course.duration}
-                  </p>
-                </div>
-                <button className="w-20 border-2 h-10 mt-64 absolute rounded-md">
-                  ENROLL
-                </button>
-              </div>
-            );
-          })}
-        </div>
+      
+     {/* Comment the below code to make it appear in small screen */}
+      <div className=" fixed bg-white top-0 w-full  shadow-md">
+        <Navbar />
       </div>
+     
+
+      <div className="pt-24 pb-5  min-h-screen  w-screen flex flex-col items-center">
+        <h1 className="text-3xl pt-5 pb-10 ">Courses</h1>
+        <CourseCard />
+        
+      </div>
+      
+      {/* Uncomment the below code to make the navbar appear down in sm screen */}
+
+      {/* <div className="md:hidden fixed bg-white bottom-0 w-full  shadow-md">
+        <Navbar />
+      </div> */}
+       {/* <div className="hidden md:block fixed bg-white top-0 w-full  shadow-md">
+        <Navbar />
+      </div> */}
     </CourseContext.Provider>
   );
 };
