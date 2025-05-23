@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.zmission.codespot;
 
 class Content {
     private String course_title;

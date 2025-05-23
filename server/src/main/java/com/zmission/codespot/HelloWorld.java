@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.zmission.codespot;
 
 public class HelloWorld {
 	private String s;

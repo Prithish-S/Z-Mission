@@ -1,10 +1,10 @@
-package com.example.helloworld;
+package com.zmission.codespot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HelloworldApplicationTests {
+class CodespotApplicationTests {
 
 	@Test
 	void contextLoads() {

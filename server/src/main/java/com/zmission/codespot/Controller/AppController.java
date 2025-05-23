@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.zmission.codespot.Controller;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,9 +7,12 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.*;
 
+import com.zmission.codespot.Course;
+import com.zmission.codespot.HelloWorld;
+
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
-public class RestApi {
+public class AppController {
 
     private static final Map<String, List<HashMap<String, String>>> courseContentMap = new HashMap<>();
     /*creating a hashmap -->content_id:list(hashmap(content_id:content_id,
