@@ -96,7 +96,27 @@ public class AppController {
         module.put("module_title", title);
         module.put("module_description", description);
         module.put("course_title", courseTitle);
-        module.put("course_markdown", markdown);
+        module.put("content_markdown", markdown);
         return module;
     }
+    @GetMapping("/content")
+    public Map<String, String> getContentByQueryParam(@RequestParam String id) {
+        for (List<HashMap<String, String>> moduleList : courseContentMap.values()) {
+            for (HashMap<String, String> module : moduleList) {
+                if (module.get("content_id").equals(id)) {
+                    Map<String, String> response = new HashMap<>();
+                    response.put("content_id", module.get("content_id"));
+                    response.put("content_markdown", module.get("content_markdown"));
+                    return response;
+                }
+            }
+        }
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "STATUS CODE 404");
+        return errorResponse;
+    }
+
+
+
+    
 }
