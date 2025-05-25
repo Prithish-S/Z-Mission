@@ -33,4 +33,26 @@
       "ML & AI ML & AI ML & AI ML & AIML & AIML & AI ML & AI ML & AI",
     "modules": 6
   }
-]}
+],
+  "content": [
+    {
+      "id": 1,
+      "content_title":"Title-1",
+      "content_md": "Markdown",
+      "content_duration": "10min"
+    },
+    {
+      "id": 2,
+      "content_title":"Title-2",
+      "content_md": "More Markdown",
+      "content_duration": "12min"
+    },
+    {
+      "id": 3,
+      "content_title":"Title-3",
+      "content_md": "Final Markdown",
+      "content_duration": "8min"
+    }
+  ]
+
+}
