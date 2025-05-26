@@ -1,4 +1,4 @@
-package com.zmission.codespot.Persist;
+package com.zmission.codespot.persist;
 
 import jakarta.persistence.*;
 
@@ -10,10 +10,10 @@ public class ContentEntity {
     @Column(name = "CONTENT_ID")
     private Long contentId;
 
-    @Column(name = "CONTENT_NAME", columnDefinition = "TEXT")
+    @Column(name = "CONTENT_NAME", nullable = false)
     private String contentName;
 
-    @Column(name = "CONTENT_MD", columnDefinition = "TEXT")
+    @Column(name = "CONTENT_MD", columnDefinition = "TEXT", nullable = false)
     private String contentMd;
 
     // Getters and Setters
