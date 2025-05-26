@@ -1,4 +1,4 @@
-package com.zmission.codespot.Controller;
+package com.zmission.codespot.controller;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -99,6 +99,7 @@ public class AppController {
         module.put("content_markdown", markdown);
         return module;
     }
+    /*
     @GetMapping("/content")
     public Map<String, String> getContentByQueryParam(@RequestParam String id) {
         for (List<HashMap<String, String>> moduleList : courseContentMap.values()) {
@@ -115,7 +116,7 @@ public class AppController {
         errorResponse.put("error", "STATUS CODE 404");
         return errorResponse;
     }
-
+	*/
 
 
     

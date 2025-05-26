@@ -1,6 +1,6 @@
 package com.zmission.codespot;
 
-class Content {
+public class Content {
     private String course_title;
     private String course_markdown;
 
