@@ -8,7 +8,7 @@ export const ContentNavbar = () => {
 
   return (
     <>
-      <div className="bg-stone-50 flex justify-between items-center h-16 inset-0 pl-7 pr-7 border-b border-t border-gray-300  active:shadow-lg hover:shadow-lg ">
+      <div className="bg-stone-50 flex justify-between items-center h-16 inset-0 pl-7 pr-7 border-b border-t border-gray-300  active:shadow-lg hover:shadow-lg w-full fixed">
         {/* Menu icon display */}
         {menu ? (
           <RiMenuUnfold3Fill

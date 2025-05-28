@@ -4,7 +4,8 @@ import {CourseContent} from "../components/CourseContent";
 export const Content = () => {
   return (
     <>
-      <div className="fixed w-full">
+    
+      <div >
         <ContentNavbar />
       </div>
       <div>
@@ -13,3 +14,4 @@ export const Content = () => {
     </>
   );
 };
+

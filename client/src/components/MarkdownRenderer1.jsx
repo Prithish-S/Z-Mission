@@ -1,12 +1,15 @@
-import Markdown from "react-markdown";
+// this file i contructed for testing
+
 import remarkGfm from "remark-gfm";
+import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 
-export default function MarkdownRenderer({ children }) {
+export default function MarkdownRenderer1({ children }) {
   return (
     <Markdown
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeHighlight]}
+      
       components={{
         h2: ({ children }) => (
           <h2 className="text-2xl font-serif font-medium text-gray-800 text-left  my-4">
@@ -23,11 +26,6 @@ export default function MarkdownRenderer({ children }) {
             {children}
           </p>
         ),
-        pre: ({ children }) => (
-          <pre className="bg-gray-200 rounded-md px-1 py-0.5 mt-5 md:w-2xl">
-            {children}
-          </pre>
-        ),
         ul: ({ children, ...props }) => (
           <ul className="list-disc pl-6 mb-4" {...props}>
             {children}
@@ -38,7 +36,6 @@ export default function MarkdownRenderer({ children }) {
             {children}
           </ol>
         ),
-        
       }}
     >
       {children}
