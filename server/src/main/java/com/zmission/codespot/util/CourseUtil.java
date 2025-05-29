@@ -1,3 +1,5 @@
+package com.zmission.codespot.util;
+
 public class CourseUtil {
 
     private CourseUtil() {}
