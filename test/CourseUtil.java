@@ -1,5 +1,3 @@
-package com.zmission.codespot.util;
-
 public class CourseUtil {
 
     private CourseUtil() {}
@@ -23,9 +21,10 @@ public class CourseUtil {
         String cleanedContent = removeImageReferences(content);
         int wordCountForReadingTime = countWords(cleanedContent);
 
-
-        
-            return Math.max(1, (int) Math.ceil( wordCountForReadingTime / WORDS_PER_MINUTE));
-            }
-
+        if (wordCountForReadingTime == 0 || wordCountForReadingTime < WORDS_PER_MINUTE) {
+            return 0;
+        } else {
+            return (int) Math.ceil( wordCountForReadingTime / WORDS_PER_MINUTE);
+        }
+    }
 }
