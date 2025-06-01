@@ -9,22 +9,22 @@ export default function MarkdownRenderer({ children }) {
       rehypePlugins={[rehypeHighlight]}
       components={{
         h2: ({ children }) => (
-          <h2 className="text-2xl font-serif font-medium text-gray-800 text-left  my-4">
+          <h2 className="text-2xl font-serif font-medium text-gray-800 text-left  my-4 break-words">
             {children}
           </h2>
         ),
         h1: ({ children }) => (
-          <h2 className="text-3xl font-serif font-medium text-gray-800 my-3">
+          <h2 className="text-3xl font-serif font-medium text-gray-800 my-3 break-words">
             {children}
           </h2>
         ),
         p: ({ children }) => (
-          <p className="text-xl font-sans text-justify  text-gray-800 leading-relaxed">
+          <p className="text-xl font-sans text-justify  text-gray-800 leading-relaxed break-words">
             {children}
           </p>
         ),
         pre: ({ children }) => (
-          <pre className="bg-gray-200 rounded-md px-1 py-0.5 mt-5 md:w-2xl">
+          <pre className="bg-gray-200 rounded-md px-1 py-0.5 mt-5 md:w-2xl overflow-auto ">
             {children}
           </pre>
         ),
