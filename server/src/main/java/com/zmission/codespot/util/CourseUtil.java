@@ -23,7 +23,9 @@ public class CourseUtil {
         String cleanedContent = removeImageReferences(content);
         int wordCountForReadingTime = countWords(cleanedContent);
 
+
         
             return Math.max(1, (int) Math.ceil( wordCountForReadingTime / WORDS_PER_MINUTE));
             }
+
 }

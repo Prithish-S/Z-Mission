@@ -1,14 +1,18 @@
 package com.zmission.codespot.controller;
-
+import com.zmission.codespot.util.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.zmission.codespot.Course;
 import com.zmission.codespot.HelloWorld;
+import com.zmission.codespot.persist.ContentEntity;
+import com.zmission.codespot.persist.ContentRepository;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
@@ -99,24 +103,28 @@ public class AppController {
         module.put("content_markdown", markdown);
         return module;
     }
-    /*
-    @GetMapping("/content")
-    public Map<String, String> getContentByQueryParam(@RequestParam String id) {
-        for (List<HashMap<String, String>> moduleList : courseContentMap.values()) {
-            for (HashMap<String, String> module : moduleList) {
-                if (module.get("content_id").equals(id)) {
-                    Map<String, String> response = new HashMap<>();
-                    response.put("content_id", module.get("content_id"));
-                    response.put("content_markdown", module.get("content_markdown"));
-                    return response;
-                }
-            }
-        }
-        Map<String, String> errorResponse = new HashMap<>();
-        errorResponse.put("error", "STATUS CODE 404");
-        return errorResponse;
-    }
-	*/
+
+    @Autowired
+    private ContentRepository contentRepository;
+	
+	@GetMapping("/content")
+	public HashMap<String,Object> getContentByQueryParams(@RequestParam("id") long id){
+		HashMap<String,Object> content=new HashMap<>();
+		Optional<ContentEntity> optionalcontent=contentRepository.findById(id);
+		if(optionalcontent.isPresent()) {
+			ContentEntity contentvalues=optionalcontent.get();
+			content.put("contentId",contentvalues.getContentId());
+			content.put("contentName",contentvalues.getContentName());
+			content.put("contentMd",contentvalues.getContentMd());
+			int minutes=CourseUtil.calculateReadTime(contentvalues.getContentMd());
+			content.put("contentDuration",minutes);
+		}
+		else {
+	        content.put("error", "STATUS CODE 404");
+
+		}
+		return content;
+	}
 
 
     
