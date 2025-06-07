@@ -5,7 +5,7 @@ export const Helloworld = () => {
 
   return (
     <div>
-      <h1 className="text-3xl text-center">{content && content.message}</h1>
+      <h1 className="text-3xl text-center bg-mint-500">{content && content.message}</h1>
     </div>
   );
 };

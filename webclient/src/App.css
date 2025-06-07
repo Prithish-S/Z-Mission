@@ -2,11 +2,6 @@
 @theme {
   --color-mint-500: oklch(0.72 0.11 178);
 }
-
-/* @import "tailwindcss/preflight";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; */
-
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

@@ -4,32 +4,12 @@ import { useState, useEffect } from "react";
 import {ErrorComponentsRenderer} from "../components/ErrorComponentsRenderer";
 
 export const CourseContent = () => {
-  
-  // const [fetchedContent, setFetchedContent] = useState("");
-  // const [fetchedContentTitle, setFetchedContentTitle] = useState("");
-  // const [fetchedContentDuration, setFetchedContentDuration] = useState("");
-  
   const { content, contentTitle, contentDuration ,error} = useContent();
-  // error && <ErrorComponentsRenderer error={error}/>
-//ACTUALLY WE DON"T NEED  LOCAL STATES , WHEN THE STATES ARE UPDATED IN useContent HOOK IT WILL AUTOMATICALLY RE-RENDER THIS COMPONENT TOO So CHANGED THEM
-
-  // useEffect(() => {
-  //   setFetchedContent(content);
-  //   setFetchedContentTitle(contentTitle);
-  //   setFetchedContentDuration(contentDuration);
-  //   console.log(fetchedContentTitle);
-  // }, [content, contentTitle, contentDuration]);
-  // if(error!=0)
-  // {
-  //         return <ErrorComponentsRenderer error={error}/> ;
-  // }
-  // if (content === "" && contentTitle === "" && contentDuration === "") {
-  //   return <h2 className="text-xl py-20">Loading...</h2>;
-  // }
+  
   return (
 
     <>
-      <div className=" pt-20 md:px-14 bg-orange-100 px-6 min-h-screen pb-10">
+      <div className="pt-20 md:px-14 bg-orange-100 px-6 min-h-screen pb-10">
         {/* The below div is for card layout */}
 
         <div className="rounded-xl bg-neutral-50 min-h-[screen/2] pb-10 shadow-orange-300 shadow-2xl md:mt-10">
@@ -52,3 +32,4 @@ export const CourseContent = () => {
     </>
   );
 };
+

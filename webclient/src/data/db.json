@@ -73,6 +73,13 @@
       "contentName":"Python basics",
       "contentMd":  "## Python Basics Cheatsheet \n\nWelcome to the **Python Beginner’s Cheatsheet**. This quick reference covers essential syntax and concepts.\n\n---\n\n##  Getting Started\n\n```python\nprint(\"Hello, Python World!\")\n```\n\n## 📦 Variables & Data Types\n\n```python\nname = \"Alice\"   # String\ngrade = 95        # Integer\nheight = 5.6      # Float\nis_active = True  # Boolean\n```\n\n## 🧰 Common Data Structures\n\n- **List**: `fruits = [\"apple\", \"banana\", \"cherry\"]`\n- **Tuple**: `point = (10, 20)`\n- **Set**: `unique_nums = {1, 2, 3}`\n- **Dictionary**: `person = {\"name\": \"Bob\", \"age\": 25}`\n\n## 🔁 Control Flow\n\n```python\nfor i in range(5):\n    print(i)\n\nif grade > 90:\n    print(\"Excellent!\")\nelse:\n    print(\"Keep trying!\")\n```\n\n## 🧪 Functions\n\n```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))\n```\n\n## 🗂️ File Handling\n\n```python\nwith open(\"file.txt\", \"r\") as file:\n    data = file.read()\n    print(data)\n```\n\n## ✅ Checklist\n\n- [x] Learn variables\n- [x] Practice loops\n- [ ] Explore modules\n- [ ] Build small projects\n\n## 📎 Reference Links\n\n- [Python Docs](https://docs.python.org/3/)\n- [W3Schools Python](https://www.w3schools.com/python/)\n\n## 📷 Image\n\n![Python Logo](https://www.python.org/static/community_logos/python-logo.png)\n",
       "contentDuration": "18 min"
+    },
+    {
+      "id":404,
+      "contentId": 404,
+      "contentName":"",
+      "contentMd":  "",
+      "contentDuration": "18 min"
     }
   ]  
 

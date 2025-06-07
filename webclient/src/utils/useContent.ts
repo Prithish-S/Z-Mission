@@ -2,23 +2,31 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { url } from "../appConstants/portConstant";
+interface ResponseContent
+{
+    id?:string,
+    contentId:number,
+    contentName:string,
+    contentMd:string,
+    contentDuration:string
+}
+
 export const useContent = () => {
-  const [content, setContent] = useState("");
-  const [contentTitle, setContentTitle] = useState("");
-  const [contentDuration, setContentDuration] = useState("");
-  const [error, setError] = useState(0);
-  const { id } = useParams();
+  const [content, setContent] = useState<string>("");
+  const [contentTitle, setContentTitle] = useState<string>("");
+  const [contentDuration, setContentDuration] = useState<string>("");
+  const [error, setError] = useState<number>(0);
+  const { id } = useParams<{id:string}>();
   useEffect(() => {
     axios
-      .get(`${url}/content`, { params: { id: id } })
+      .get<ResponseContent | ResponseContent[]>(`${url}/content`, { params: { id: id } })
       .then((response) => {
         if (Array.isArray(response.data)) {
           if (response.data.length > 0) {
             setContent(response.data[0].contentMd);
             setContentTitle(response.data[0].contentName);
             setContentDuration(response.data[0].contentDuration);
-          } 
-          else {
+          } else {
             throw {
               response: {
                 status: Number(500),
