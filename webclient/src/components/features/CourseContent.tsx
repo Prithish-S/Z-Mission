@@ -4,6 +4,7 @@ import { CourseContentLayout } from ".././layout/CourseContentLayout";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {ErrorRenderer} from "../common/ErrorRenderer";
+import { ContentNavbar } from "../common/ContentNavbar";
 
 interface contentData {
   contentId: string | number;
@@ -42,14 +43,22 @@ export const CourseContent = () => {
       {data &&
       data.contentName.trim() !== "" &&
       data.contentMd.trim() !== "" ? (
+      <>
+      <div >
+        <ContentNavbar error={false}/>
+      </div>
         <CourseContentLayout
           title={data.contentName}
           duration={data.contentDuration}
           content={<MarkdownRenderer>{data.contentMd}</MarkdownRenderer>}
         />
+        </>
       ) : !(loading) && (
         <>
        { console.log(error)}
+       <div >
+        <ContentNavbar error={true}/>
+      </div>
         <ErrorRenderer error={error}/>
         </>
         
