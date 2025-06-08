@@ -20,7 +20,7 @@ export const CourseContentLayout = (props:Props) => {
                   {props.title}
                 </h1>
                 <h5 className=" text-md text-gray-600">
-                  Duration : {props.duration}
+                  Duration : {props.duration} min
                 </h5>
               </div>
 

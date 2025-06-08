@@ -1,9 +1,9 @@
 import MarkdownRenderer from "./MarkdownRenderer";
-//import { useContent } from "../../utils/useContent";
 import { getData } from "../../utils/api_utils";
 import { CourseContentLayout } from ".././layout/CourseContentLayout";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {ErrorRenderer} from "../common/ErrorRenderer";
 
 interface contentData {
   contentId: string | number;
@@ -14,6 +14,7 @@ interface contentData {
 export const CourseContent = () => {
   const [data, setData] = useState<contentData>();
   const [error, setError] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams<string>();
 
   useEffect(() => {
@@ -24,8 +25,10 @@ export const CourseContent = () => {
 
       if (response.err === null && response.data) {
         setData(response.data as contentData);
+        setLoading(false);
       } else {
         setError(response.err);
+         setLoading(false);
       }
     };
 
@@ -44,8 +47,12 @@ export const CourseContent = () => {
           duration={data.contentDuration}
           content={<MarkdownRenderer>{data.contentMd}</MarkdownRenderer>}
         />
-      ) : (
-        console.log(error || 500)
+      ) : !(loading) && (
+        <>
+       { console.log(error)}
+        <ErrorRenderer error={error}/>
+        </>
+        
       )}
     </>
   );
