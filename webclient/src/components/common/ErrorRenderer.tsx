@@ -1,5 +1,5 @@
 import troubleShoot from "../../assets/troubleShoot.jpg";
-import badReq from "../../assets/notFound1.jpg";
+import badReq from "../../assets/girlSad.jpg";
 import notFound from "../../assets/notFound1.jpg";
 import { ErrorLayout } from "../layout/ErrorLayout";
 
@@ -40,6 +40,19 @@ export const ErrorRenderer = (props:PropsObject) => {
           <ErrorLayout
             img={notFound}
             message="Sorry, the data you requested is currently unavailable."
+            subtext="Please check back soon!"
+          />
+        </div>
+      </>
+    );
+  }
+  else{
+    return (
+      <>
+        <div>
+          <ErrorLayout
+            img={notFound}
+            message="CONNECTION REFUSED"
             subtext="Please check back soon!"
           />
         </div>

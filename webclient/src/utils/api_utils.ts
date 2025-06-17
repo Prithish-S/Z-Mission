@@ -31,8 +31,8 @@ export async function requestData(
         
         throw {
           response: {
-            status: Number(404),
-            data: 404,
+            status: Number(400),
+            data: 400,
           },
         };
       }

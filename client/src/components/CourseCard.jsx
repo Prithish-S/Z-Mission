@@ -7,8 +7,8 @@ export const CourseCard = () => {
     <div className=" grid lg:grid-cols-3 grid-cols-1 gap-20">
       {filteredCourses.map((course) => {
         return (
-          <div className=" h-80 w-80 px-10 active:shadow-lg hover:shadow-lg col-span-1 flex flex-col items-center rounded-xl bg-cyan-50">
-            <h1 className="text-2xl  font-semibold pt-4">{course.name}</h1>
+          <div className=" h-44 w-96 px-10 active:shadow-lg hover:shadow-lg col-span-1 flex flex-col items-center rounded-xl bg-cyan-50">
+            <h1 className="text-xl  font-semibold pt-4">{course.name}</h1>
             <p className="text-justify italic mt-7">{course.description}</p>
             <div className="flex flex-col mt-44 absolute self-start">
               <p>
