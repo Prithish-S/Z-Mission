@@ -21,7 +21,7 @@ export const CoursesLayout=()=>
 
         
     return (
-      <div className="flex justify-center items-start pt-28 lg:pt-44 bg-amber-50 min-h-screen pb-5">
+      <div className="flex justify-center items-start pt-22 lg:pt-28 bg-amber-50 min-h-screen pb-5">
         <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-x-32 lg:gap-y-10 gap-y-5">
           {courses.map((course: courseInterface) => (
             <CourseCard
