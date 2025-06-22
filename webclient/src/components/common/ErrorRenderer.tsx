@@ -52,7 +52,7 @@ export const ErrorRenderer = (props:PropsObject) => {
         <div>
           <ErrorLayout
             img={notFound}
-            message="CONNECTION REFUSED"
+            message="Connection with the server is refused."
             subtext="Please check back soon!"
           />
         </div>

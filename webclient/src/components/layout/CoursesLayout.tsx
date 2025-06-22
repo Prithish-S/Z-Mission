@@ -8,22 +8,20 @@ interface courseInterface {
   courseDescription: string;
   noOfModules:number,
   courseDuration:number,
-  imageUrl: string;
+  imageUrl: string,
+  setLeft:boolean,
 }
 export const CoursesLayout=()=>
 {
     const {courses,error}=useAppSelector((state: { courses: any; })=>state.courses);
-    if(error)
-    {
-        return <ErrorRenderer error={error}/>
-    }
-    else if(courses.length>0){
+    
+    if(courses.length>0){
 
         
     return (
-      <div className="flex justify-center items-start pt-22 lg:pt-28 bg-amber-50 min-h-screen pb-5">
+      <div className="flex justify-center items-start pt-22 lg:pt-28 bg-yellow-50 min-h-screen pb-5 ">
         <div className="grid lg:grid-cols-3 grid-cols-1 lg:gap-x-32 lg:gap-y-10 gap-y-5">
-          {courses.map((course: courseInterface) => (
+          {courses.map((course: courseInterface,index:number) => (
             <CourseCard
               key={course.courseId}
               courseName={course.courseName}
@@ -32,9 +30,21 @@ export const CoursesLayout=()=>
               courseDuration={course.courseDuration}
               noOfModules={course.noOfModules}
               imageUrl={course.imageUrl}
+              setLeft={(index+1)%3===0 ? true:false}
             />
           ))}
         </div>
       </div>
     );
-}}
+
+}
+
+else {
+  
+         {setTimeout(()=>{
+          return <ErrorRenderer error={error}/>
+        },100);}
+    
+}
+
+}

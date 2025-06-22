@@ -5,7 +5,8 @@
     {
       "courseId": 1,
       "courseName": "Java Programming",
-      "courseDescription": "# Java Programming\n\nLearn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas",
+        "courseDescription": "Learn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas\n\nLearn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas\n\nLearn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas",
+
       "noOfModules": 10,
       "courseDuration": 240,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfeEZJV6yz8WS2-NXjDY-fSZG3SguX4oK1NgfvF7JyIz0acaVR_DUcjcXQBNlIFWGOgBg&usqp=CAU"
@@ -13,7 +14,7 @@
     {
       "courseId": 2,
       "courseName": "Web Development",
-      "courseDescription": "# Web Development\n\nFull stack development course covering:\n\n- HTML, CSS, JavaScript\n- Frontend with React\n- Backend with Node.js/Express\n- Database Integration",
+      "courseDescription": "Full stack development course covering:\n\n- HTML, CSS, JavaScript\n- Frontend with React\n- Backend with Node.js/Express\n- Database Integration",
       "noOfModules": 12,
       "courseDuration": 360,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDonOOtK9mNeawfozFsVhhFDhaB-GLlxUm2a9yanCvabxY6xLdlFWN45pP6Eb_p_fkIQ&usqp=CAU"
@@ -21,7 +22,7 @@
     {
       "courseId": 3,
       "courseName": "Java Programming",
-      "courseDescription": "# Java Programming\n\nLearn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas",
+      "courseDescription": "Learn Java from basics to advanced.\n\n- OOP Concepts\n- Exception Handling\n- Collections\n- Streams and Lambdas",
       "noOfModules": 10,
       "courseDuration": 240,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfeEZJV6yz8WS2-NXjDY-fSZG3SguX4oK1NgfvF7JyIz0acaVR_DUcjcXQBNlIFWGOgBg&usqp=CAU"
@@ -29,7 +30,7 @@
     {
       "courseId": 4,
       "courseName": "Web Development",
-      "courseDescription": "# Web Development\n\nFull stack development course covering:\n\n- HTML, CSS, JavaScript\n- Frontend with React\n- Backend with Node.js/Express\n- Database Integration",
+      "courseDescription": "Full stack development course covering:\n\n- HTML, CSS, JavaScript\n- Frontend with React\n- Backend with Node.js/Express\n- Database Integration",
       "noOfModules": 12,
       "courseDuration": 360,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShDonOOtK9mNeawfozFsVhhFDhaB-GLlxUm2a9yanCvabxY6xLdlFWN45pP6Eb_p_fkIQ&usqp=CAU"

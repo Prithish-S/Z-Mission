@@ -19,8 +19,7 @@ interface stateInterface
 }
 const initialState:stateInterface={courses:[],error:null};
 
-
-export const coursesSlice = createSlice({
+const coursesSlice = createSlice({
   name: 'courses',
   initialState,
   reducers: {
@@ -29,7 +28,7 @@ export const coursesSlice = createSlice({
   },
 })
 
-export default coursesSlice.reducer;
+export const coursesReducer= coursesSlice.reducer;
 export const { setCourses } = coursesSlice.actions;
 
 
