@@ -1,4 +1,3 @@
-
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
@@ -15,9 +14,10 @@ interface courseInterface
 interface stateInterface
 {
   courses:courseInterface[],
-  error:number|null
+  error:number|null,
+  loading:boolean
 }
-const initialState:stateInterface={courses:[],error:null};
+const initialState:stateInterface={courses:[],error:null,loading:true};
 
 const coursesSlice = createSlice({
   name: 'courses',
@@ -30,5 +30,3 @@ const coursesSlice = createSlice({
 
 export const coursesReducer= coursesSlice.reducer;
 export const { setCourses } = coursesSlice.actions;
-
-

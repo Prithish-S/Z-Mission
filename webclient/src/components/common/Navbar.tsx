@@ -40,12 +40,14 @@ export const Navbar = () => {
         err: number | null;
       };
       if (!data) {
-        return;
+         dispatch(setCourses({courses:[],error:err,loading:false}));
+
       }
-      if (Array.isArray(data)) {
-        dispatch(setCourses({courses:data,error:err}));
-      } else {
-        dispatch(setCourses({courses:data.courses,error:err}));
+      else if (Array.isArray(data)) {
+        dispatch(setCourses({courses:data,error:err,loading:false}));
+      } 
+      else{
+        dispatch(setCourses({courses:data.courses,error:err,loading:false}));
       }
     }
   };
@@ -56,13 +58,22 @@ export const Navbar = () => {
         data: courseInterface[] | { courses: courseInterface[] } | null;
         err: number | null;
       };
-      if (!data) {
-        return;
+      // if (!data) {
+      //   return;
+      // }
+      // if (Array.isArray(data)) {
+      //   dispatch(setCourses({courses:data,error:err}));
+      // } else {
+      //   dispatch(setCourses({courses:data.courses,error:err}));
+      // }
+       if (!data) {
+         dispatch(setCourses({courses:[],error:err,loading:false}));
       }
-      if (Array.isArray(data)) {
-        dispatch(setCourses({courses:data,error:err}));
-      } else {
-        dispatch(setCourses({courses:data.courses,error:err}));
+      else if (Array.isArray(data)) {
+        dispatch(setCourses({courses:data,error:err,loading:false}));
+      } 
+      else{
+        dispatch(setCourses({courses:data.courses,error:err,loading:false}));
       }
     }
     fetch();

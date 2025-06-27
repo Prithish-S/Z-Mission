@@ -55,7 +55,7 @@ export const CourseCard = (props:courseInterface) => {
       </div>
 
 {/* BELOW IS THE LOGIC FOR DESCRIPTION POP_UP*/}
-<div className={`absolute top-0 z-50  hidden pointer-events-none lg:block  ${props.setLeft ? "right-full -translate-x-5":"left-full translate-x-5"}  p-3 w-80 h-56 bg-white  opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition duration-400 ease-in-out rounded-lg border-2  line-clamp-6`}>
+<div className={`absolute top-0 z-50  hidden pointer-events-none lg:block  ${props.setLeft ? "right-full -translate-x-5":"left-full translate-x-5"}  p-3 w-80 h-56 bg-white  opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition duration-400 ease-in-out rounded-lg border-2  `}>
 
  <div className="line-clamp-6">
   <MarkdownRenderer>{props.courseDescription}</MarkdownRenderer>

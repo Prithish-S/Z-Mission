@@ -40,8 +40,8 @@ export const CourseContent = () => {
 
   return (
     <>
-      {data &&
-      data.contentName.trim() !== "" &&
+      {data && data.contentName!=null &&
+      data.contentName.trim() !== "" &&  data.contentMd!=null &&
       data.contentMd.trim() !== "" ? (
       <>
       <div >

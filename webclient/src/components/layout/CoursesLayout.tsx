@@ -13,9 +13,9 @@ interface courseInterface {
 }
 export const CoursesLayout=()=>
 {
-    const {courses,error}=useAppSelector((state: { courses: any; })=>state.courses);
+    const {courses,error,loading}=useAppSelector((state: { courses: any; })=>state.courses);
     
-    if(courses.length>0){
+     if(courses && courses.length>0 ){
 
         
     return (
@@ -39,11 +39,10 @@ export const CoursesLayout=()=>
 
 }
 
-else {
+else if(!loading) {
   
-         {setTimeout(()=>{
-          return <ErrorRenderer error={error}/>
-        },100);}
+        return <ErrorRenderer error={error}/>
+       
     
 }
 
