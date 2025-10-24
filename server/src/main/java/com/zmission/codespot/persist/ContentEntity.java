@@ -3,7 +3,7 @@ package com.zmission.codespot.persist;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "content")
+@Table(name = "Content")
 public class ContentEntity {
 
     @Id
