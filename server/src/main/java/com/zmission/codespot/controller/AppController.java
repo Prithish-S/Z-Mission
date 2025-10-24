@@ -126,6 +126,16 @@ public class AppController {
 		return content;
 	}
 
+    @Autowired
+     IDGenerator iDGenerator;
+    @GetMapping("/uniqueId")
+    public HashMap<String,Long> getUniqueId(@RequestParam("IdName") String IDName)
+    {
+        Map<String,Long> idMap=new HashMap<>();
+
+        idMap.put(IDName,iDGenerator.getCourseId());
+    }
+
 
     
 }
